@@ -1,0 +1,16 @@
+.grid{
+    padding-top: 50px;
+    display: inline-grid;
+    grid-template-columns: repeat(4, 180px);
+    grid-template-rows: repeat(3, 160px);
+}
+
+.grid figure:hover{
+    transform: scale(1.3) translateY(-9px);
+    background-color:gray;
+    color: black;
+}
+
+.grid figure{
+    transition: all 1.15s linear;
+}

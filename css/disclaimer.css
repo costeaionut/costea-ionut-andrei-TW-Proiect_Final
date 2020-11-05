@@ -2,23 +2,19 @@
     position: fixed;
     left: 0;
     bottom: 0;
-    animation: vinesus 6s linear forwards 1.5s;
+    animation: tranzitieSus 6s linear forwards 1.5s;
     width: 100%;
     background-color: red;
     color: white;
     text-align: center;
     opacity: 0;
-  }
-
-.disclaimer:hover {
-    color: rgb(114, 18, 66);
 }
 
-@keyframes vinesus {
+@keyframes tranzitieSus {
 
     0% {
         opacity: 1;
-        transform: translateY(100%);
+        transform: translateY(20px);
     }
 
     25% {
