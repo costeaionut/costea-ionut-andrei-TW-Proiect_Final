@@ -17,3 +17,13 @@ table {
   border-collapse: collapse;
   empty-cells: show;
 }
+
+body{
+  counter-reset: c1;
+ } 
+
+p:before{
+  counter-increment:c1;
+  content: "Ingredient alergenic " counter(c1) ":"
+ }
+ 
