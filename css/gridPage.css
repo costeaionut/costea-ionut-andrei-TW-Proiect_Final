@@ -1,8 +1,6 @@
 .grid{
     padding-top: 50px;
     display: inline-grid;
-    grid-template-columns: repeat(4, 180px);
-    grid-template-rows: repeat(3, 160px);
 }
 
 .grid figure:hover{
@@ -13,4 +11,25 @@
 
 .grid figure{
     transition: all 1.15s linear;
+}
+
+@media screen and (min-width: 900px){
+    .grid{
+        grid-template-columns: repeat(4, 180px);
+        grid-template-rows: repeat(3, 160px);
+    }
+}
+
+@media screen and (max-width: 899px) and (min-width: 500px){
+    .grid{
+        grid-template-columns: repeat(2, 180px);
+        grid-template-rows: repeat(2, 160px);
+    }
+}
+
+@media screen and (max-width: 499px){
+    .grid{
+        grid-template-columns: repeat(1, 180px);
+        grid-template-rows: repeat(1, 160px);
+    }
 }
