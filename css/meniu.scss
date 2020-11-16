@@ -1,40 +1,62 @@
+@import "./largeScreen";
+$largeScreenFontSize: 18px;
+$mediumScreenFontSize: 14px;
+
 *{
     margin: 0;
     padding: 0;
-  }
-.meniu{
-    list-style-type: none;
-    display: -webkit-inline-flex;
-    li{
-        z-index: 1;
+}
+
+@media screen and (min-width: 1600px){
+    @include meniuType($largeScreenFontSize);
+}
+
+@media screen and (min-width: 600px) and (max-width: 1599px){
+    @include meniuType($mediumScreenFontSize);
+}
+
+@media screen and (max-width: 599px){
+    .largeNavBar{
+        display: none;
+    }
+    .smallNavBar{
+        width: 100%;
         background-color: rgb(56, 55, 55);
-        height: 50px;
-        width: 195px;
-        line-height: 50px;
-        float: left;
-        text-align: center;
-        &:hover{
-            background-color: rgb(46, 126, 46);
-        }
-        a{
-            text-decoration: none;
-            color: white;
-            text-align: center;
-            font-size: 18px;
-            font-family: serif;
-        }
-        .sub-meniu{
+        display: block;
+        text-align: right;
+    }
+    .meniu{
+        list-style-type: none;
+        display: -webkit-inline-flex;
+        position: relative;
+        .hamburgerMeniuContent{
             display: none;
-            list-style-type: none;
-            position: absolute;
             li{
-                display: block;
-                border: 1px solid white;
+                &:hover {
+                background-color: cyan;
+            } 
+        }
+            
+        }
+        li{
+            list-style-type: none;
+            background-color: rgb(56, 55, 55);
+            height: 50px;
+            width: 195px;
+            line-height: 50px;
+            float: left;
+            text-align: center;
+            z-index: 1;
+            a{
+                text-decoration: none;
+                color: white;
+                text-align: center;
+                font-size: 18px;
+                font-family: serif;
             }
         }
     }
-}
-
-.meniu li:hover .sub-meniu{
-    display: flex;
+    .hamburgerPopUp:hover .hamburgerMeniuContent{
+        display: block;
+    }
 }

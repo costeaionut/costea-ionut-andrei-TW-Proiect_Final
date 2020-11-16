@@ -1,0 +1,50 @@
+@mixin meniuType($fontSize){
+    .smallNavBar{
+        display: none;
+    }
+    .largeNavBar{
+        width: 100%;
+        background-color: rgb(56, 55, 55);
+        display: block;
+    }
+    .meniu{
+        list-style-type: none;
+        display: -webkit-inline-flex;
+        position: relative;
+        li{
+            z-index: 1;
+            background-color: rgb(56, 55, 55);
+            height: 50px;
+            width: 195px;
+            line-height: 50px;
+            float: left;
+            text-align: center;
+            &:hover{
+                background-color: rgb(46, 126, 46);
+            }
+            a{
+                text-decoration: none;
+                color: white;
+                text-align: center;
+                font-size: $fontSize;
+                font-family: serif;
+            }
+            .sub-meniu{
+                display: none;
+                list-style-type: none;
+                position: absolute;
+                li{
+                    display: inline-block;
+                    border: 1px solid white;
+                    &:hover{
+                        background-color: gray;
+                    }
+                }
+            }
+        }
+    }
+    
+    .meniu li:hover .sub-meniu{
+        display: block;
+    }
+}

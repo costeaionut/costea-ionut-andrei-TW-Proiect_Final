@@ -3,47 +3,146 @@
   padding: 0;
 }
 
-.meniu {
-  list-style-type: none;
-  display: -webkit-inline-flex;
+@media screen and (min-width: 1600px) {
+  .smallNavBar {
+    display: none;
+  }
+  .largeNavBar {
+    width: 100%;
+    background-color: #383737;
+    display: block;
+  }
+  .meniu {
+    list-style-type: none;
+    display: -webkit-inline-flex;
+    position: relative;
+  }
+  .meniu li {
+    z-index: 1;
+    background-color: #383737;
+    height: 50px;
+    width: 195px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+  }
+  .meniu li:hover {
+    background-color: #2e7e2e;
+  }
+  .meniu li a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-family: serif;
+  }
+  .meniu li .sub-meniu {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+  }
+  .meniu li .sub-meniu li {
+    display: inline-block;
+    border: 1px solid white;
+  }
+  .meniu li .sub-meniu li:hover {
+    background-color: gray;
+  }
+  .meniu li:hover .sub-meniu {
+    display: block;
+  }
 }
 
-.meniu li {
-  z-index: 1;
-  background-color: #383737;
-  height: 50px;
-  width: 195px;
-  line-height: 50px;
-  float: left;
-  text-align: center;
+@media screen and (min-width: 600px) and (max-width: 1599px) {
+  .smallNavBar {
+    display: none;
+  }
+  .largeNavBar {
+    width: 100%;
+    background-color: #383737;
+    display: block;
+  }
+  .meniu {
+    list-style-type: none;
+    display: -webkit-inline-flex;
+    position: relative;
+  }
+  .meniu li {
+    z-index: 1;
+    background-color: #383737;
+    height: 50px;
+    width: 195px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+  }
+  .meniu li:hover {
+    background-color: #2e7e2e;
+  }
+  .meniu li a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-family: serif;
+  }
+  .meniu li .sub-meniu {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+  }
+  .meniu li .sub-meniu li {
+    display: inline-block;
+    border: 1px solid white;
+  }
+  .meniu li .sub-meniu li:hover {
+    background-color: gray;
+  }
+  .meniu li:hover .sub-meniu {
+    display: block;
+  }
 }
 
-.meniu li:hover {
-  background-color: #2e7e2e;
-}
-
-.meniu li a {
-  text-decoration: none;
-  color: white;
-  text-align: center;
-  font-size: 18px;
-  font-family: serif;
-}
-
-.meniu li .sub-meniu {
-  display: none;
-  list-style-type: none;
-  position: absolute;
-}
-
-.meniu li .sub-meniu li {
-  display: block;
-  border: 1px solid white;
-}
-
-.meniu li:hover .sub-meniu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media screen and (max-width: 599px) {
+  .largeNavBar {
+    display: none;
+  }
+  .smallNavBar {
+    width: 100%;
+    background-color: #383737;
+    display: block;
+    text-align: right;
+  }
+  .meniu {
+    list-style-type: none;
+    display: -webkit-inline-flex;
+    position: relative;
+  }
+  .meniu .hamburgerMeniuContent {
+    display: none;
+  }
+  .meniu .hamburgerMeniuContent li:hover {
+    background-color: cyan;
+  }
+  .meniu li {
+    list-style-type: none;
+    background-color: #383737;
+    height: 50px;
+    width: 195px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    z-index: 1;
+  }
+  .meniu li a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-family: serif;
+  }
+  .hamburgerPopUp:hover .hamburgerMeniuContent {
+    display: block;
+  }
 }
 /*# sourceMappingURL=meniu.css.map */
