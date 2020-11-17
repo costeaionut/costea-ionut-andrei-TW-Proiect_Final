@@ -4,23 +4,23 @@
     }
     .largeNavBar{
         width: 100%;
-        background-color: rgb(56, 55, 55);
+        background-color: #02111B;
         display: block;
     }
     .meniu{
         list-style-type: none;
         display: -webkit-inline-flex;
-        position: relative;
         li{
+            cursor: pointer;
             z-index: 1;
-            background-color: rgb(56, 55, 55);
+            background-color:#02111B;
             height: 50px;
             width: 195px;
             line-height: 50px;
             float: left;
             text-align: center;
             &:hover{
-                background-color: rgb(46, 126, 46);
+                background-color: rgb(48, 41, 47);
             }
             a{
                 text-decoration: none;
@@ -32,18 +32,35 @@
             .sub-meniu{
                 display: none;
                 list-style-type: none;
-                position: absolute;
                 li{
+                    transition: all 0.5s ease-in-out 0s;
                     display: inline-block;
-                    border: 1px solid white;
                     &:hover{
-                        background-color: gray;
+                        background-color: #5d737e;
+                    }
+                    a{
+                        transition: all 0.5s ease-in-out 0s;
+                        position: relative;
+                        text-decoration: none;
+                        &::before{
+                            content:"";
+                            position: absolute;
+                            background-color: black;
+                            height: 2px;
+                            width: 100%;
+                            left: 0;
+                            bottom: 0;
+                            transform: scaleX(0);
+                            transition: all 0.5s ease-in-out 0s;
+                        }
+                        &:hover::before{
+                            transform: scaleX(1);
+                        }
                     }
                 }
             }
         }
     }
-    
     .meniu li:hover .sub-meniu{
         display: block;
     }

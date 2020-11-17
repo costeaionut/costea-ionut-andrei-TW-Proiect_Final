@@ -29,6 +29,9 @@ $mediumScreenFontSize: 14px;
         list-style-type: none;
         display: -webkit-inline-flex;
         position: relative;
+        .hamburgerPopUp:hover{
+            background-color: green;
+        }
         .hamburgerMeniuContent{
             display: none;
             li{
@@ -60,3 +63,4 @@ $mediumScreenFontSize: 14px;
         display: block;
     }
 }
+
