@@ -30,39 +30,28 @@ body{
     .containerPictures .image:nth-child(#{$i}){
         background: url("/home/costea/Documents/Facultate/Anul 3/Tehnici Web/Proiect_Final/imagini_animated_grid/#{$i}.jpeg");
         z-index: 0;
-        clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-        animation: inwardsPopIn#{$i} 4s linear infinite 
+        clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
+        animation: inwardsPopIn#{$i} 4s linear infinite;
     }
 }
 
 @keyframes inwardsPopIn1{
     0%{
-        z-index: 0;
-    }
-    50%{
-        clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-    }
-    75%{
-        z-index:1;
-    }
-    100%{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-}
-
-@keyframes inwardsPopIn2{
-    0%{
+        clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
         z-index: 1;
     }
-    25%{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-    50%{
-        z-index: 0;
-    }
     100%{
-        clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+        clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 0%);
     }
 }
+
+@keyframes restoreState{
+    0%{
+        z-index: 0;
+        clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
+    }
+}
+
+
+
 

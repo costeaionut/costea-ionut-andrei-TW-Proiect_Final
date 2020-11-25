@@ -1,0 +1,59 @@
+$basicScale: 1em;
+$h1Scale: 2em;
+$h2Scale: 1.5em;
+$pScale: 1em;
+
+*{
+    font-size: $basicScale;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width: 1600px){
+    h1{
+        font-size: $h1Scale;
+    }    
+    
+    h2{
+        font-size: $h2Scale;
+    }
+    
+    p{
+        font-size: $pScale;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1599px){
+    h1{
+        font-size: $h1Scale - $h1Scale/10;
+    }    
+    
+    h2{
+        font-size: $h2Scale - $h2Scale/10;
+    }
+    
+    p{
+        font-size: $pScale - $pScale/10;
+    }
+}
+
+@media screen and (max-width: 599px){
+    * {
+        -webkit-animation: none !important;
+        -moz-animation: none !important;
+        -o-animation: none !important;
+        -ms-animation: none !important;
+        animation: none !important;
+    }
+    h1{
+        font-size: $h1Scale - $h1Scale/5;
+    }    
+    
+    h2{
+        font-size: $h2Scale - $h2Scale/5;
+    }
+    
+    p{
+        font-size: $pScale - $pScale/5;
+    }
+}

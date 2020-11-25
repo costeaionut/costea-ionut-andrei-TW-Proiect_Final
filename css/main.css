@@ -1,4 +1,46 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
 }
+
+@media screen and (min-width: 1600px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1599px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.35em;
+  }
+  p {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  * {
+    -webkit-animation: none !important;
+    animation: none !important;
+  }
+  h1 {
+    font-size: 1.6em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  p {
+    font-size: 0.8em;
+  }
+}
+/*# sourceMappingURL=main.css.map */

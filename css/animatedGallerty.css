@@ -37,8 +37,8 @@ body {
 .containerPictures .image:nth-child(1) {
   background: url("/home/costea/Documents/Facultate/Anul 3/Tehnici Web/Proiect_Final/imagini_animated_grid/1.jpeg");
   z-index: 0;
-  -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-          clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
   -webkit-animation: inwardsPopIn1 4s linear infinite;
           animation: inwardsPopIn1 4s linear infinite;
 }
@@ -46,77 +46,49 @@ body {
 .containerPictures .image:nth-child(2) {
   background: url("/home/costea/Documents/Facultate/Anul 3/Tehnici Web/Proiect_Final/imagini_animated_grid/2.jpeg");
   z-index: 0;
-  -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-          clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
+          clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
   -webkit-animation: inwardsPopIn2 4s linear infinite;
           animation: inwardsPopIn2 4s linear infinite;
 }
 
 @-webkit-keyframes inwardsPopIn1 {
   0% {
-    z-index: 0;
-  }
-  50% {
-    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-            clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-  }
-  75% {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
     z-index: 1;
   }
   100% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 0%);
   }
 }
 
 @keyframes inwardsPopIn1 {
   0% {
-    z-index: 0;
-  }
-  50% {
-    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-            clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-  }
-  75% {
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
     z-index: 1;
   }
   100% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 0%);
   }
 }
 
-@-webkit-keyframes inwardsPopIn2 {
+@-webkit-keyframes restoreState {
   0% {
-    z-index: 1;
-  }
-  25% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  50% {
     z-index: 0;
-  }
-  100% {
-    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-            clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
   }
 }
 
-@keyframes inwardsPopIn2 {
+@keyframes restoreState {
   0% {
-    z-index: 1;
-  }
-  25% {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-  }
-  50% {
     z-index: 0;
-  }
-  100% {
-    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
-            clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+    -webkit-clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
+            clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 100% 100%, 100% 0%);
   }
 }
 /*# sourceMappingURL=animatedGallerty.css.map */
