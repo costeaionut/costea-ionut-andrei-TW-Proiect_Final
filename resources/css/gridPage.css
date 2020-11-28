@@ -1,4 +1,5 @@
 .grid{
+    padding-left: 50px;
     padding-top: 50px;
     display: inline-grid;
 }
@@ -10,6 +11,8 @@
 }
 
 .grid figure{
+    width: 100px;
+    height: 120px;
     transition: all 1.15s linear;
 }
 
