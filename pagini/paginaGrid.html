@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="../css/gridPage.css">
-    <link rel="stylesheet" href="../css/meniu.css">
+    <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/disclaimer.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,70 +14,97 @@
 
     <title>Galerie poze</title>
 </head>
+
 <body>
     <header>
         <h1>Anemona Bistro Bar</h1>
-        <nav class = "navBar">
-            <a href="../index.html" class = "active">Acasa</a>
-            <a href="#DeCeNoi">De ce noi?</a>
-            <a href="../pagini/meniu.html">Meniu</a>
-            <a href="#Contact">Contact</a>
-            <a href="pagini/paginaGrid.html">Galerie cu poze</a>
+        <nav class="largeNavBar">
+            <ul class="meniu">
+                <li class="active"><i class="fas fa-home" style="color:white"></i><a href="../index.html">Acasa</a></li>
+                <li><a> Informatii Generale </a>
+                    <ul class="sub-meniu">
+                        <li><a href="../pagini/meniu.html">Meniu</a></li>
+                        <li><a href="../pagini/paginaGrid.html">Galerie cu poze</a></li>
+                    </ul>
+                </li>
+                <li><a> Sectiuni </a>
+                    <ul class="sub-meniu">
+                        <li><a href="../index.html#DeCeNoi">De ce noi?</a></li>
+                        <li><a href="../index.html#Contact">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
-      </header> 
-    <div class = "grid">
-        <figure id = "grid_item1">
+        <nav class="smallNavBar">
+            <ul class="meniu">
+                <li class="hamburgerPopUp"><i class="fas fa-bars"></i>
+                    <ul>
+                        <div class="hamburgerMeniuContent">
+                            <li><a href="../index.html">Acasa</a></li>
+                            <li><a href="../pagini/meniu.html">Meniu</a></li>
+                            <li><a href="../pagini/paginaGrid.html">Galerie cu poze</a></li>
+                            <li><a href="../index.html#DeCeNoi">De ce noi?</a></li>
+                            <li><a href="../index.html#Contact">Contact</a></li>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="grid">
+        <figure id="grid_item1">
             <img src="../imagini/grid/1.png" alt="">
             <figcaption>1. Bar picture 1</figcaption>
         </figure>
 
-        <figure id = "grid_item2">
+        <figure id="grid_item2">
             <img src="../imagini/grid/2.png" alt="">
             <figcaption>2. Bar picture 2</figcaption>
         </figure>
-        
-        <figure id = "grid_item3">
+
+        <figure id="grid_item3">
             <img src="../imagini/grid/3.png" alt="">
             <figcaption>3. Bar picture 3</figcaption>
         </figure>
-        
-        <figure id = "grid_item4">
+
+        <figure id="grid_item4">
             <img src="../imagini/grid/4.png" alt="">
             <figcaption>4. Bar picture 4</figcaption>
         </figure>
-        
-        <figure id = "grid_item5">
+
+        <figure id="grid_item5">
             <img src="../imagini/grid/5.png" alt="">
             <figcaption>5. Bar picture 5</figcaption>
         </figure>
-        
-        <figure id = "grid_item6">
+
+        <figure id="grid_item6">
             <img src="../imagini/grid/8.png" alt="">
             <figcaption>6. Bar picture 6</figcaption>
         </figure>
-        
-        <figure id = "grid_item7">
+
+        <figure id="grid_item7">
             <img src="../imagini/grid/9.png" alt="">
             <figcaption>7. Bar picture 7</figcaption>
         </figure>
-        
-        <figure id = "grid_item8">
+
+        <figure id="grid_item8">
             <img src="../imagini/grid/10.png" alt="">
             <figcaption>8. Bar picture 8</figcaption>
         </figure>
-        <figure id = "grid_item9">
+        <figure id="grid_item9">
             <img src="../imagini/grid/11.png" alt="">
             <figcaption>9. Bar picture 9</figcaption>
         </figure>
-        
-        <figure id = "grid_item10">
+
+        <figure id="grid_item10">
             <img src="../imagini/grid/12.png" alt="">
             <figcaption>10. Bar picture 10</figcaption>
         </figure>
-        
+
     </div>
-    <div class = "disclaimer">
+    <div class="disclaimer">
         <p>Disclaimer: Acest site este un proiect scolar!</p>
     </div>
 </body>
+
 </html>

@@ -1,0 +1,49 @@
+body {
+    display: grid;
+    width: 100%;
+    height: 250px;
+    grid-template-areas: "head head"
+                         "info info"
+                         "cont cont";
+    
+    header {
+        grid-area: head;
+    }
+
+    #DeCeNoi {
+        grid-area: info;
+        grid-template-areas: "atm dog"
+            "food food";
+    }
+
+    #Atmosfera {
+        display: inline-grid;
+        grid-area: atm;
+    }
+
+    #Blanosi {
+        display: inline-grid;
+        grid-area: dog;
+    }
+
+    #food {
+        position: absolute;
+        display: inline-grid;
+        grid-area: food;
+    }
+
+    #Contact {
+        grid-area: cont;
+    }
+}
+
+#UpArrow{
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    i{
+        border-radius: 100%;
+        border: solid 2px;
+    }
+    font-size: 40px;
+}

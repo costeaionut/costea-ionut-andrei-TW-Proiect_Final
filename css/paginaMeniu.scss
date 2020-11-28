@@ -1,0 +1,63 @@
+/*Google External Fonts*/
+h2 {
+  font-family: 'Syne Tactile', cursive;
+}
+
+td,
+td,
+th {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+td:empty {
+  padding: 20px;
+}
+
+table {
+  width: 500px;
+  border-collapse: collapse;
+  empty-cells: show;
+}
+
+body {
+  counter-reset: c1;
+}
+
+tr:nth-child(2n+3) {
+  background-color: #DB6C79;
+
+  &:hover {
+    background-color: #ED4D6E;
+  }
+
+  transition: linear 1s;
+}
+
+tr:nth-child(even) {
+  background-color: #E4FFE1;
+
+  &:hover {
+    background-color: #7DDF64;
+  }
+
+  transition: linear 1s;
+}
+
+p:before {
+  counter-increment: c1;
+  content: "Ingredient alergenic "counter(c1) ":"
+}
+
+#counters {
+  padding-top: 20px;
+}
+
+@media screen and (max-width: 599px) {
+  .scrollbar {
+    overflow: scroll;
+    border: solid 5px;
+    width: 500px;
+    height: 250px;
+  }
+}
