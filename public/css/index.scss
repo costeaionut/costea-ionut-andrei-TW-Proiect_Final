@@ -3,8 +3,8 @@ body {
     width: 100%;
     height: 250px;
     grid-template-areas: "head head"
-                         "info info"
-                         "cont cont";
+                         "info cont"
+                         "info cont";
     
     header {
         grid-area: head;
@@ -12,6 +12,7 @@ body {
 
     #DeCeNoi {
         grid-area: info;
+        width: auto;
         grid-template-areas: "atm dog"
             "food food";
     }
@@ -28,11 +29,13 @@ body {
 
     #food {
         position: absolute;
-        display: inline-grid;
         grid-area: food;
     }
 
     #Contact {
+        position: absolute;
+        right: 5%;
+        top:43%;
         grid-area: cont;
     }
 }
