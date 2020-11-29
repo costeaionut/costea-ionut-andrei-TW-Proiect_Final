@@ -16,6 +16,47 @@
     transition: all 1.15s linear;
 }
 
+.clpath{
+    display: grid;
+    position: relative;
+    left: 900px;
+    bottom: 50px;
+    width: 360px;
+    height: 480px;
+    border: 4px solid black;
+}
+
+.clpath .box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.clpath .box:nth-child(1){
+    background-image: url("/imagini_animated_grid/Rocky.jpg");
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 0);
+
+}
+
+.clpath .box:nth-child(2){
+    background-image: url("/imagini_animated_grid/Max.jpg");
+    clip-path: polygon(100% 0, 0 100%, 0 100%, 100% 100%);
+    z-index: 1;
+}
+.clpath .box:nth-child(2):hover{
+    transition: 0.5s;
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+
+.clpath .box:nth-child(1):hover{
+    z-index: 2;
+    transition: 0.5s;
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+
+
 @media screen and (min-width: 900px){
     .grid{
         grid-template-columns: repeat(4, 180px);

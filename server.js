@@ -1,6 +1,8 @@
 // load the things we need
 var express = require('express');
 var app = express();
+
+// set the port we are listening on
 var port = 8000
 
 // set the view engine to ejs
@@ -20,6 +22,10 @@ app.get('/meniu', function(req, res) {
 
 app.get('/paginaGrid', function(req, res) {
     res.render('pages/paginaGrid');
+});
+
+app.use(function(req, res, next){
+    res.status(404).render('pages/404');
 });
 
 app.listen(port);
