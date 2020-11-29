@@ -1,6 +1,7 @@
 // load the things we need
 var express = require('express');
 var app = express();
+var port = 8000
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -13,5 +14,13 @@ app.get('/', function(req, res) {
     res.render('pages/index');
 });
 
-app.listen(8080);
-console.log('Site is listening on port 8080');
+app.get('/meniu', function(req, res) {
+    res.render('pages/meniu');
+});
+
+app.get('/paginaGrid', function(req, res) {
+    res.render('pages/paginaGrid');
+});
+
+app.listen(port);
+console.log('Site is listening on port ', port);

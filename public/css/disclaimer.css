@@ -10,6 +10,18 @@
     opacity: 0;
 }
 
+#UpArrow {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    font-size: 40px;
+}
+
+#UpArrow i {
+    border-radius: 100%;
+    border: solid 2px;
+}
+
 @keyframes tranzitieSus {
 
     0% {
