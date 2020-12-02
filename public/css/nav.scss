@@ -2,49 +2,57 @@
 $largeScreenFontSize: 18px;
 $mediumScreenFontSize: 14px;
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-@media screen and (min-width: 1600px){
+@media screen and (min-width: 1600px) {
     @include meniuType($largeScreenFontSize);
 }
 
-@media screen and (min-width: 600px) and (max-width: 1599px){
+@media screen and (min-width: 600px) and (max-width: 1599px) {
     @include meniuType($mediumScreenFontSize);
 }
 
-@media screen and (max-width: 599px){
-    .largeNavBar{
+@media screen and (max-width: 599px) {
+    .largeNavBar {
         display: none;
     }
-    .smallNavBar{
+
+    .smallNavBar {
         width: 100%;
         background-color: rgb(56, 55, 55);
         display: block;
         text-align: right;
     }
-    .meniu{
+
+    .meniu {
         list-style-type: none;
         display: -webkit-inline-flex;
         position: relative;
-        .hamburgerPopUp{
-            &:hover{
+
+        .hamburgerPopUp {
+            &:hover {
                 background-color: green;
             }
         }
-        .hamburgerMeniuContent{
+
+        .hamburgerMeniuContent {
             display: none;
-            li{
+
+            li {
                 &:hover {
-                background-color: cyan;
-                
-            } 
+                    background-color: cyan;
+                }
+            }
+
+            .sub-meniu {
+                    transform: scaleY(0);
+            }
+
         }
-            
-        }
-        li{
+        li {
             list-style-type: none;
             background-color: rgb(56, 55, 55);
             height: 50px;
@@ -53,7 +61,8 @@ $mediumScreenFontSize: 14px;
             float: left;
             text-align: center;
             z-index: 1;
-            a{
+
+            a {
                 text-decoration: none;
                 color: white;
                 text-align: center;
@@ -62,11 +71,21 @@ $mediumScreenFontSize: 14px;
             }
         }
     }
-    .hamburgerPopUp:hover .hamburgerMeniuContent{
+
+    .hamburgerPopUp:hover .hamburgerMeniuContent {
         display: block;
     }
-    .hamburgerPopUp:hover .hamburgerMeniuContent li a{
+
+    .hamburgerPopUp:hover .hamburgerMeniuContent li a {
         animation: tracking-in-expand 0.6s linear;
+    }
+
+    #sectiuni{
+        &:hover .sub-meniu{
+            transition: linear 0.7s;
+            transform: scaleY(1);
+
+        }
     }
 }
 
@@ -75,9 +94,8 @@ $mediumScreenFontSize: 14px;
         letter-spacing: -0.5em;
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
-  
-

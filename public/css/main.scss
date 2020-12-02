@@ -38,13 +38,13 @@ $pScale: 1em;
 }
 
 @media screen and (max-width: 599px){
-    * {
+    /* {
         -webkit-animation: none !important;
         -moz-animation: none !important;
         -o-animation: none !important;
         -ms-animation: none !important;
         animation: none !important;
-    }
+    }*/
     h1{
         font-size: $h1Scale - $h1Scale/5;
     }    

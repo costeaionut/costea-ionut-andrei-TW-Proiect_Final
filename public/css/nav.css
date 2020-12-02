@@ -1,3 +1,13 @@
+@-webkit-keyframes shadowDrop {
+  0% {
+  }
+}
+
+@keyframes shadowDrop {
+  0% {
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -25,9 +35,13 @@
     line-height: 50px;
     float: left;
     text-align: center;
+    text-shadow: 0px -40px rgba(255, 255, 255, 0);
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
   }
   .meniu li:hover {
     background-color: #30292f;
+    text-shadow: 0px 0px white;
   }
   .meniu li a {
     text-decoration: none;
@@ -41,6 +55,7 @@
     list-style-type: none;
   }
   .meniu li .sub-meniu li {
+    text-shadow: none;
     -webkit-transition: all 0.5s ease-in-out 0s;
     transition: all 0.5s ease-in-out 0s;
     display: inline-block;
@@ -98,9 +113,13 @@
     line-height: 50px;
     float: left;
     text-align: center;
+    text-shadow: 0px -40px rgba(255, 255, 255, 0);
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
   }
   .meniu li:hover {
     background-color: #30292f;
+    text-shadow: 0px 0px white;
   }
   .meniu li a {
     text-decoration: none;
@@ -114,6 +133,7 @@
     list-style-type: none;
   }
   .meniu li .sub-meniu li {
+    text-shadow: none;
     -webkit-transition: all 0.5s ease-in-out 0s;
     transition: all 0.5s ease-in-out 0s;
     display: inline-block;
@@ -173,6 +193,10 @@
   .meniu .hamburgerMeniuContent li:hover {
     background-color: cyan;
   }
+  .meniu .hamburgerMeniuContent .sub-meniu {
+    -webkit-transform: scaleY(0);
+            transform: scaleY(0);
+  }
   .meniu li {
     list-style-type: none;
     background-color: #383737;
@@ -196,6 +220,12 @@
   .hamburgerPopUp:hover .hamburgerMeniuContent li a {
     -webkit-animation: tracking-in-expand 0.6s linear;
             animation: tracking-in-expand 0.6s linear;
+  }
+  #sectiuni:hover .sub-meniu {
+    -webkit-transition: linear 0.7s;
+    transition: linear 0.7s;
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
   }
 }
 
