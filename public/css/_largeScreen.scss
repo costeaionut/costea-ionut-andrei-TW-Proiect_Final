@@ -4,16 +4,18 @@
     }
     .largeNavBar{
         width: 100%;
-        background-color: #02111B;
+        background-color:  #3ea3f5;
         display: block;
+        
     }
     .meniu{
         list-style-type: none;
         display: -webkit-inline-flex;
+        
         li{
             cursor: pointer;
             z-index: 1;
-            background-color:#02111B;
+            background-color: #3ea3f5;
             height: 50px;
             width: 195px;
             line-height: 50px;
@@ -22,11 +24,13 @@
             text-shadow: 0px -40px rgba(255,255,255,0);
             transition-duration: 1s;
             &:hover{
-                background-color: rgb(48, 41, 47);
+                background-color: #2397f7;
                 text-shadow: 0px 0px rgba(255,255,255,1);
+                box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
                 
             }
             a{
+                font-family: 'Dancing Script', cursive;
                 text-decoration: none;
                 color: white;
                 text-align: center;
@@ -70,6 +74,7 @@
         display: block;
     }
 }
+
 
 @keyframes shadowDrop{
     0%{

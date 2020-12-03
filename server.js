@@ -13,7 +13,7 @@ app.use(express.static("public"));
 
 // index page
 app.get('/', function(req, res) {
-    res.render('pages/index');
+    res.render('pages/home');
 });
 
 app.get('/meniu', function(req, res) {
