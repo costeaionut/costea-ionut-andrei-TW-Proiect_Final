@@ -194,6 +194,9 @@ header {
 }
 
 @media screen and (max-width: 599px) {
+  .title h1 {
+    font-size: 5vw;
+  }
   .largeNavBar {
     display: none;
   }
@@ -209,13 +212,19 @@ header {
     position: relative;
   }
   .meniu .hamburgerPopUp:hover {
-    background-color: green;
+    background-color: #2397f7;
+    text-shadow: 0px 0px white;
+    -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
   .meniu .hamburgerMeniuContent {
     display: none;
   }
   .meniu .hamburgerMeniuContent li:hover {
-    background-color: cyan;
+    background-color: #2397f7;
+    text-shadow: 0px 0px white;
+    -webkit-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   }
   .meniu .hamburgerMeniuContent .sub-meniu {
     -webkit-transform: scaleY(0);
@@ -223,7 +232,7 @@ header {
   }
   .meniu li {
     list-style-type: none;
-    background-color: #20369B;
+    background-color: #3ea3f5;
     height: 50px;
     width: 195px;
     line-height: 50px;
