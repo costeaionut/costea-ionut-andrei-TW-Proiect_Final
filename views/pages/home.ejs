@@ -2,11 +2,20 @@
 <html lang="ro" dir="ltr">
 
 <head>
-
+    <link rel="stylesheet" href="/css/text-over-video.css">
     <link rel="stylesheet" href="/css/deCeNoi.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <!--<link rel="stylesheet" href="/css/index.css">-->
 
     <%- include('../partials/head'); %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+        integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TimelineMax.min.js"
+        integrity="sha512-0xrMWUXzEAc+VY7k48pWd5YT6ig03p4KARKxs4Bqxb9atrcn2fV41fWs+YXTKb8lD2sbPAmZMjKENiyzM/Gagw=="
+        crossorigin="anonymous"></script>
+
 
     <title>Anemona Bar|Bucuresti</title>
 
@@ -15,23 +24,38 @@
 <body>
 
     <header>
-        <%- include('../partials/header'); %>
+        <div class="hdr">
+            <%- include('../partials/header'); %>
+        </div>
     </header>
 
-    <section id="DeCeNoi">
-        <!-- De ce sa vii la noi? -->
+    <!--
+    <div class = "text-over-video">
+         Videoclip pentru promovare 
+        <div class="webvtt">
+            <video id = "vid" autoplay muted>
+                <source src='video/bar_presentation.mp4' type='video/mp4'>
+                <<track label="English subtitles" kind="subtitles" srclang="en" src="video/upcSubtitle.vtt" default>
+            </video>
+        </div>
         <h2>Berceni's Finest Bar</h2>
         <p>Ascuns in inima parcului Tineretului, Anemona Bistro Bar este ferit de haosul
             urban si ofera o experienta de neuitat</p>
-        <!-- Videoclip pentru promovare -->
-        <div class="webvtt">
-            <video width="500px" height="auto" controls>
-                <!--<source src='video/upc-tobymanley.theora.ogg' type='video/ogg'>-->
-                <source src='video/bar_presentation.mp4' type='video/mp4'>
-                <track label="English subtitles" kind="subtitles" srclang="en" src="video/upcSubtitle.vtt" default>
-            </video>
+    </div>
+    -->
+    <section class="hero">
+        <div class="animated-image">
+            <img src="/imagini/bar.png" alt="Unde-i Paradisu?">
         </div>
+    </section>
 
+    <h1 class="Headline"> Berceni's Finest Bar </h1>
+
+    <div class="slider"></div>
+
+
+
+    <section id="DeCeNoi">
         <section>
             <section id="Atmosfera">
                 <h3>Atmosfera placuta:</h3>
@@ -82,5 +106,7 @@
         <%- include('../partials/footer'); %>
     </footer>
 </body>
+
+<script src="/js/slider_animation.js"></script>
 
 </html>
