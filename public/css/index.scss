@@ -1,52 +1,57 @@
-body {
-    display: grid;
+#DeCeNoi {
     width: 100%;
-    height: 250px;
-    grid-template-areas: "head head"
-                         "info cont"
-                         "info cont";
-    
-    header {
-        grid-area: head;
-    }
+    position: relative;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
-    #DeCeNoi {
-        grid-area: info;
-        width: auto;
-        grid-template-areas: "atm dog"
-            "food food";
-    }
-
-    #Atmosfera {
-        display: inline-grid;
-        grid-area: atm;
-    }
-
-    #Blanosi {
-        display: inline-grid;
-        grid-area: dog;
-    }
-
-    #food {
-        position: absolute;
-        grid-area: food;
-    }
-
-    #Contact {
-        position: absolute;
-        right: 5%;
-        top:43%;
-        grid-area: cont;
+    div {
+        padding-top: 20px;
+        width: 100%;
     }
 }
 
-#UpArrow{
+@media screen and (max-width: 800px) {
+    #DeCeNoi {
+        display: block;
+        width: 100%;
+        background-color: white;
+
+        div {
+            width: 100%;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+    }
+}
+
+#UpArrow {
     position: fixed;
     right: 5%;
     bottom: 5%;
-    i{
+
+    i {
         border-radius: 100%;
         border: solid 2px;
     }
+
     font-size: 40px;
+}
+
+.contact {
+    position: relative;
+    background-color: #262626;
+    display: flex;
+    .orar{
+        position: relative;
+        left: 0%;
+    }
+    .adresa{
+        position: relative;
+        margin-left: 50%;
+    }
+    a{
+        font-family: 'Times New Roman', Times, serif;
+    }
 }

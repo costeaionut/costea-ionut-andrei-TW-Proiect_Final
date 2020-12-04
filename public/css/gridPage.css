@@ -139,6 +139,10 @@
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
   }
+  .galerie figure:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
   figure:nth-child(7) {
     -webkit-animation-delay: 0s;
             animation-delay: 0s;
@@ -187,6 +191,10 @@
             animation-timing-function: linear;
     -webkit-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
+  }
+  .galerie figure:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
   }
   figure:nth-child(7) {
     -webkit-animation-delay: 0s;
