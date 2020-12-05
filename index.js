@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 // set the port we are listening on
-var port = 8000
+var port = process.env.PORT || 8000;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
