@@ -30,6 +30,8 @@
         </div>
     </header>
 
+    <button onclick="myFunction()">Toggle dark mode</button>
+
     <!--
     <div class = "text-over-video">
          Videoclip pentru promovare 
@@ -101,7 +103,7 @@
             </ul>
         </div>
 
-        <div class = "adresa">
+        <div class="adresa">
             <address>
                 <p>Telefon: 074555333</p>
                 <p>Email: <a href="mailto:anemona@rezervari.ro"> anemona@rezervari.ro</a></p>
@@ -117,5 +119,12 @@
 </body>
 
 <script src="/js/slider_animation.js"></script>
+
+<script>
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+</script>
 
 </html>

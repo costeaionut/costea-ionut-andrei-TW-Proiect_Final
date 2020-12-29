@@ -9,6 +9,11 @@ $pScale: 1em;
     margin: 0;
 }
 
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
 @media screen and (min-width: 1600px){
     h1{
         font-size: $h1Scale;

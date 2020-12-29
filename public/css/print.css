@@ -1,5 +1,6 @@
 @media print{
     .disclaimer {
+        animation: none;
         position: fixed;
         left: 0;
         top: 0;
@@ -8,5 +9,9 @@
         color: white;
         text-align: center;
         opacity: 1;
+    }
+
+    header{
+        display: none;
     }
 }
