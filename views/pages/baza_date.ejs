@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <form action="/bazadate" method="GET">
+        <table style="width: 100%;">
+            <tr>
+                <th><label for="nume">Produsul căutat</label></th>
+                <th><label for="pret">Preț maxim</label></th>
+                <th><label for="tip">Tipul produsului</label></th>
+                <th><label for="vegan">Afisare doar produse vegane?</label></th>
+            </tr>
+            <tr>
+                <th><input type="text" name="nume" id="nume"></th>
+                <th><input type="range" id="pret" name="pret" min="0" max="99"
+                        oninput="this.nextElementSibling.value = this.value">
+                    <output>49</output>
+                </th>
+                <th>
+                    <input type="radio" id="opt1" name="tip" value="Bautura">
+                    <label for="opt1">Bautura</label><br>
+                    <input type="radio" id="opt2" name="tip" value="Mancare">
+                    <label for="opt2">Mancare</label><br>
+                    <input type="radio" id="opt3" name="tip" value="Desert">
+                    <label for="opt3">Desert</label>
+                </th>
+                <th><input type="checkbox" id="vegan" name="vegan" value="1"></th>
+                <th><input type="submit" value="Cauta"></th>
+            </tr>
+        </table>
+    </form>
+
+    <table style="width: 100%;">
+        <tr>
+            <th>
+                <p>Nume produs</p>
+            </th>
+            <th>
+                <p>Descriere produs</p>
+            </th>
+            <th>
+                <p>Categorie</p>
+            </th>
+            <th>
+                <p>Pret</p>
+            </th>
+            <th>
+                <p>Data introducere</p>
+            </th>
+            <th>
+                <p>Vegan</p>
+            </th>
+            <th>
+                <p>Imagine</p>
+            </th>
+        </tr>
+        <% for(let i = 0; i < locals.produse.length; i++){ %>
+        <tr>
+            <th>
+                <p><%= produse[i].nume_produs %></p>
+            </th>
+            <th>
+                <p><%= produse[i].descriere_produs %></p>
+            </th>
+            <th>
+                <p><%= produse[i].categorie %></p>
+            </th>
+            <th>
+                <p><%= produse[i].pret %></p>
+            </th>
+            <th>
+                <p><%= produse[i].DATE_FORMAT %></p>
+            </th>
+            <% if(produse[i].vegan == 1) {%>
+            <th>
+                <p>Da</p>
+            </th>
+            <% } %>
+            <% if(produse[i].vegan == 0) {%>
+            <th>
+                <p>Nu</p>
+            </th>
+            <% } %>
+            <th><img src="<%= produse[i].imagine %>" alt="" width="100" height="100"></th>
+            <% } %>
+        </tr>
+    </table>
+
+</body>
+
+</html>
