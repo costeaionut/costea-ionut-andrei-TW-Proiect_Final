@@ -9,10 +9,7 @@ $pScale: 1em;
     margin: 0;
 }
 
-.dark-mode {
-    background-color: black;
-    color: white;
-}
+
 
 @media screen and (min-width: 1600px){
     h1{
@@ -61,4 +58,19 @@ $pScale: 1em;
     p{
         font-size: $pScale - $pScale/5;
     }
+}
+
+.dark-mode{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 40%;
+}
+
+#darklightbutton{
+    background-color: #2B3E90;
+    border: none;
 }

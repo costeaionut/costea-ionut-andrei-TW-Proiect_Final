@@ -4,11 +4,6 @@
   margin: 0;
 }
 
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-
 @media screen and (min-width: 1600px) {
   h1 {
     font-size: 2em;
@@ -50,5 +45,20 @@
   p {
     font-size: 0.8em;
   }
+}
+
+.dark-mode {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 40%;
+}
+
+#darklightbutton {
+  background-color: #2B3E90;
+  border: none;
 }
 /*# sourceMappingURL=main.css.map */

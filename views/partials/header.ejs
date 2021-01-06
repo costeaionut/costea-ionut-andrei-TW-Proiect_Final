@@ -1,15 +1,16 @@
-<div class = "title">
+<div class="title">
   <h1>Anemona Bistro Bar</h1>
 </div>
 
 <nav class="largeNavBar">
   <ul class="meniu">
-    <li class="active"><i class="fas fa-home" style="color:white"></i><a href="/">Acasa</a></li>
-    <li><a href="/bazadate">Meniu cu poze</a></li>
+    <li id="acasa" class="active"><i class="fas fa-home" style="color:white"></i><a href="/">Acasa</a></li>
+    <li id="bazadate"><a href="/bazadate">Meniu cu poze</a></li>
+    <li><button id="darklightbutton" onclick="dark_light_toggle()"><i class="fas fa-moon"></i></i></button></li>
     <li><a> Informatii Generale </a>
       <ul class="sub-meniu">
-        <li><a href="/meniu">Meniu</a></li>
-        <li><a href="/paginaGrid">Galerie cu poze</a></li>
+        <li id="meniu"><a href="/meniu">Meniu</a></li>
+        <li id="grid"><a href="/paginaGrid">Galerie cu poze</a></li>
       </ul>
     </li>
     <li><a> Sectiuni </a>
@@ -29,7 +30,7 @@
           <li><a href="/index">Acasa</a></li>
           <li><a href="/meniu">Meniu</a></li>
           <li><a href="/paginaGrid">Galerie cu poze</a></li>
-          <li id = "sectiuni"><a> Sectiuni </a>
+          <li id="sectiuni"><a> Sectiuni </a>
             <ul class="sub-meniu">
               <li><a href="/#DeCeNoi">De ce noi?</a></li>
               <li><a href="/#Contact">Contact</a></li>
@@ -41,4 +42,26 @@
   </ul>
 </nav>
 
-<div class = "bx_shadow"></div>
+<div class="bx_shadow"></div>
+
+<script>
+  function dark_light_toggle(){
+    
+    var element = document.getElementById("baieteala");
+    
+    if(localStorage.getItem("theme") == "dark"){
+      element.classList.add("dark-mode");
+      document.getElementById("darklightbutton").innerHTML = '<i class="fas fa-sun"></i>';
+    }
+    
+    if (localStorage.getItem("theme") == "light" || localStorage.getItem("theme") === undefined) {
+      element.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
+      document.getElementById("darklightbutton").innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+      element.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+      document.getElementById("darklightbutton").innerHTML = '<i class="fas fa-moon"></i>';
+    }
+  }
+</script>

@@ -1,21 +1,15 @@
-// load the things we need
 const {
     query
 } = require('express');
 var express = require('express');
 
 var app = express();
-
 var mysql = require('mysql')
-
-// set the port we are listening on
 var port = process.env.PORT || 8000;
 
-// set the view engine to ejs
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
-// use res.render to load up an ejs view file
 
 const date_conectare = {
     host: "eu-cdbr-west-03.cleardb.net",
@@ -24,9 +18,8 @@ const date_conectare = {
     database: "heroku_a07b157368f36ae"
 }
 
-// index page
 app.get('/', function (req, res) {
-    res.render('pages/home');
+    res.render('pages/home', {activ: 'acasa'});
 });
 
 app.get('/bazadate', function (req, res) {
@@ -63,7 +56,8 @@ app.get('/bazadate', function (req, res) {
         if (err) throw err;
         console.log(rezultate)
         res.render('pages/baza_date', {
-            produse: rezultate
+            produse: rezultate,
+            activ: 'bazadate'
         });
 
     })
@@ -71,11 +65,11 @@ app.get('/bazadate', function (req, res) {
 });
 
 app.get('/meniu', function (req, res) {
-    res.render('pages/meniu');
+    res.render('pages/meniu', {activ: 'meniu'});
 });
 
 app.get('/paginaGrid', function (req, res) {
-    res.render('pages/paginaGrid');
+    res.render('pages/paginaGrid', {activ: 'grid'});
 });
 
 app.use(function (req, res, next) {

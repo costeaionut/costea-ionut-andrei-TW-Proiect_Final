@@ -47,6 +47,9 @@
     list-style-type: none;
     display: -webkit-inline-flex;
   }
+  .meniu .active {
+    background-color: cadetblue;
+  }
   .meniu li {
     cursor: pointer;
     z-index: 1;
@@ -127,6 +130,9 @@
   .meniu {
     list-style-type: none;
     display: -webkit-inline-flex;
+  }
+  .meniu .active {
+    background-color: cadetblue;
   }
   .meniu li {
     cursor: pointer;

@@ -12,6 +12,10 @@
         list-style-type: none;
         display: -webkit-inline-flex;
         
+        .active{
+            background-color: cadetblue;
+        }
+        
         li{
             cursor: pointer;
             z-index: 1;
@@ -73,7 +77,6 @@
         display: block;
     }
 }
-
 
 @keyframes shadowDrop{
     0%{
