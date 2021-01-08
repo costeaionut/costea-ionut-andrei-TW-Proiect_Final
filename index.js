@@ -50,8 +50,6 @@ app.get('/bazadate', function (req, res) {
     const partial_query = 'select nume_produs, descriere_produs, categorie, pret, DATE_FORMAT(DATE_INTRODUCERE, "%d %M  %Y") as `DATE_FORMAT`, vegan, imagine from ' + database + ".produse where" + nume_statement + tip_statement + pret_statement + vegan_statement + ";";
     var query = partial_query.replace(' and', '');
 
-    console.log(query)
-
     conexiune.query(query, function (err, rezultate, campuri) {
         if (err) throw err;
         console.log(rezultate)
@@ -59,7 +57,7 @@ app.get('/bazadate', function (req, res) {
             produse: rezultate,
             activ: 'bazadate'
         });
-
+        
     })
     conexiune.end()
 });
