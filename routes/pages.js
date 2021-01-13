@@ -19,6 +19,10 @@ router.get('/register', function (req, res) {
     res.render('pages/register');
 });
 
+router.get('/login', function (req, res) {
+    res.render('pages/login');
+});
+
 router.get('/bazadate', function (req, res) {
 
     var conexiune = mysql.createConnection(date_conectare);
@@ -66,6 +70,5 @@ router.get('/meniu', function (req, res) {
 router.get('/paginaGrid', function (req, res) {
     res.render('pages/paginaGrid', {activ: 'grid'});
 });
-
 
 module.exports = router;

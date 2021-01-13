@@ -295,3 +295,15 @@ a {
   }
 }
 /*# sourceMappingURL=nav.css.map */
+
+.lgnbtn{
+  position: relative;
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.flgnbtn{
+  margin-left: 600px;
+}

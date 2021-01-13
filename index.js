@@ -5,6 +5,7 @@ var express = require('express');
 
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const cookieParser = require('cookie-parser');
 
 var app = express();
 var port = process.env.PORT || 8000;
@@ -18,6 +19,7 @@ dotenv.config({
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
+
 var mysql = require('mysql')
 const date_conectare = {
     host: process.env.DATABASE_HOST,
@@ -30,11 +32,14 @@ app.use(express.urlencoded({
     extended: false
 }));
 app.use(express.json());
+app.use(cookieParser());
 
 //Definim rutele proiectului
 app.get('/', require('./routes/pages'));
 
 app.get('/register', require('./routes/pages'));
+
+app.get('/login', require('./routes/pages'));
 
 app.get('/bazadate', require('./routes/pages'));
 
@@ -83,6 +88,57 @@ app.post('/auth/register', (req, res) => {
             });
         });
     });
+});
+
+app.post('/auth/login', async (req, res) =>{
+    
+    const {email, pass} = req.body;
+    var conexiune = mysql.createConnection(date_conectare);
+
+    try {
+        if ( !email || !pass ){
+            return res.status(400).render('pages/login', {
+                message: "Vă rugăm introduceți emailul și parola!"
+            }) 
+        }
+
+    } catch (error) {
+        console.log(error);
+    }
+
+    conexiune.query('SELECT * FROM heroku_a07b157368f36ae.utilizatori WHERE email = ?', [email], async (error, results) => {
+        if(error){
+            console.log(error);
+        }
+
+        console.log(await bcrypt.compare(pass, results[0].password))
+
+        if (!results || (pass !== '123')){
+            return res.status(401).render('pages/login', {
+                message: "Datele introduse sunt greșite!"
+            })
+        } else {
+            const id = results[0].email;
+
+            ///Adăugat în baza de date un id care se modifică automat ca să îl luăm pe post de token id;
+
+            const token = jwt.sign({id}, process.env.JWT_PASSWORD, {
+                expiresIN: process.env.JWT_EXPIRES_IN
+            }); 
+
+            const cookieOptions = {
+                expires: new Date(
+                    Date.now() + process.env.JWT_COOKIE_EXPIRATION * 24 * 60 * 60 * 1000
+                )
+            }
+
+            res.cookie('jwt', token, cookieOptions);
+            res.status(200).redirect("/");
+            
+        }
+
+    });
+
 });
 
 app.use(function (req, res, next) {
