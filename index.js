@@ -3,76 +3,93 @@ const {
 } = require('express');
 var express = require('express');
 
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
 var app = express();
-var mysql = require('mysql')
 var port = process.env.PORT || 8000;
+
+var dotenv = require('dotenv');
+
+dotenv.config({
+    path: './.env'
+});
 
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
-
+var mysql = require('mysql')
 const date_conectare = {
-    host: "eu-cdbr-west-03.cleardb.net",
-    user: "be5df639565f3a",
-    password: "69da649c",
-    database: "heroku_a07b157368f36ae"
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASS,
+    database: process.env.DATABASE
 }
 
-app.get('/', function (req, res) {
-    res.render('pages/home', {activ: 'acasa'});
-});
+app.use(express.urlencoded({
+    extended: false
+}));
+app.use(express.json());
 
-app.get('/bazadate', function (req, res) {
+//Definim rutele proiectului
+app.get('/', require('./routes/pages'));
+
+app.get('/register', require('./routes/pages'));
+
+app.get('/bazadate', require('./routes/pages'));
+
+app.get('/meniu', require('./routes/pages'));
+
+app.get('/paginaGrid', require('./routes/pages'));
+
+app.post('/auth/register', (req, res) => {
+
+    const { lName, fName, job, email, pass, conPass, picture } = req.body;
 
     var conexiune = mysql.createConnection(date_conectare);
 
-    conexiune.connect(function (err) {
-        if (err) throw err;
-        console.log("Lesgo");
-    });
+    conexiune.query('SELECT email FROM heroku_a07b157368f36ae.utilizatori WHERE email=?;', [email], async (error, results) => {
+        if (error) {
+            console.log(error);
+        }
+        if (results.length > 0) {
 
-    var nume = req.query.nume;
-    var pret = req.query.pret;
-    var tip = req.query.tip;
-    var vegan = req.query.vegan;
+            return res.render('pages/register', {
+                message: "Adresa de email este deja folosită"
+            });
 
-    var nume_statement = "";
-    var pret_statement = "";
-    var tip_statement = "";
-    var vegan_statement = "";
+        } else if (pass !== conPass) {
 
-    if (nume !== '') nume_statement = ` and nume_produs = '${nume}'`;
-    if (pret !== undefined) pret_statement = ` and pret < ${pret}`;
-    if (tip !== undefined) tip_statement = ` and categorie = '${tip}'`;
-    if (vegan !== undefined) vegan_statement = ` and vegan = true`;
+            return res.render('pages/register', {
+                message: "Parolele nu corespund!"
+            });
 
-    var database = date_conectare.database
-    const partial_query = 'select nume_produs, descriere_produs, categorie, pret, DATE_FORMAT(DATE_INTRODUCERE, "%d %M  %Y") as `DATE_FORMAT`, vegan, imagine from ' + database + ".produse where" + nume_statement + tip_statement + pret_statement + vegan_statement + ";";
-    var query = partial_query.replace(' and', '');
+        }
+        let hashedPassword = await bcrypt.hash(pass, 8);
 
-    conexiune.query(query, function (err, rezultate, campuri) {
-        if (err) throw err;
-        console.log(rezultate)
-        res.render('pages/baza_date', {
-            produse: rezultate,
-            activ: 'bazadate'
+        conexiune.query('INSERT INTO heroku_a07b157368f36ae.utilizatori SET ?', {
+            email: email,
+            nume: lName,
+            prenume: fName,
+            password: hashedPassword,
+            job: job,
+            poza: picture
+        }, (error, result) => {
+            if(error){
+                console.log(error);
+            }
+            return res.render('pages/register', {
+                message: "Utilizator înregistrat!"
+            });
         });
-        
-    })
-    conexiune.end()
-});
-
-app.get('/meniu', function (req, res) {
-    res.render('pages/meniu', {activ: 'meniu'});
-});
-
-app.get('/paginaGrid', function (req, res) {
-    res.render('pages/paginaGrid', {activ: 'grid'});
+    });
 });
 
 app.use(function (req, res, next) {
     res.status(404).render('pages/404');
 });
+
+
 
 app.listen(port);
 console.log('Site is listening on port ', port);
